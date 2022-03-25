@@ -1,0 +1,167 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+/* TODAS LAS PAGS */ 
+
+body {
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 400;
+    background-color: #E3CAA5;
+}
+
+header,
+nav{
+    background-color: #AD8B73;
+}
+header {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #E3CAA5;
+    font-size: 18px;
+}
+
+nav ul li{
+    list-style-type: none;
+    display: inline-block;
+    margin: 10px;
+}
+.submenuProductos{
+    display: none;
+    position: absolute;
+}
+.submenuProductos li{
+    display: block;
+    background-color: rgb(173, 139, 115, 0.8);
+    margin: 0;
+    width: 80px;
+    height: 20px;
+    color: #E3CAA5;
+}
+.navProductos:hover ol{
+    display: block;
+}
+/* INDEX */
+.card{
+    border: 1px #ad8b73e8 solid;
+    border-radius: 5px;
+    height: 270px;
+    width: 250px;
+    padding: 20px;
+    margin: 40px;
+}
+
+.containerImage{
+    height: 210px;
+    width: 230px;
+
+}
+.containerImage img{
+    max-width: 100%;
+    max-height: 100%;
+}
+/* NOSOTROS */
+.mainNosotros{
+    margin: 10px 0px 10px 10px;
+}
+.nosotrosP,
+.nosotrosImage{
+    margin: 10px 0px 10px 0px;
+}
+.nosotrosImage{
+    max-width: 400px;
+}
+.containerNosotrosP{
+    width: 400px;
+}
+/* CONTACTO */
+.contacto{
+    margin-left: 10px;
+}
+.bloque {
+    display: block;
+}
+.contactoFormulario,
+.contactoSubtitulo {
+    margin: 10px 0px 10px 0px;
+}
+.contactoFormulario label{
+    margin-top: 10px;
+}
+.contactoFormulario textarea,
+.contactoFormulario input{
+    border-radius: 5px;
+    border: #AD8B73 1px solid;
+    width: 500px;
+}
+.formularioMensaje{
+    resize: none;
+    height: 110px;
+    padding: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.alturaInput{
+    height: 30px;
+}
+/* LOGIN */
+.registro,
+.inicio-sesion{
+    width: 50%;
+    margin-left: 5px;
+}
+.inicio-sesion button,
+.registro button,
+.botonContacto{
+    border-radius: 5px;
+    border: #AD8B73 1px solid;
+    color: black;
+    height: 30px;
+    width: 90px;
+    margin-top: 10px;
+}
+.inicio-sesion button:hover,
+.registro button:hover,
+.botonContacto:hover{
+    cursor: pointer;
+}
+.inicio-sesion label,
+.inicio-sesion button{
+    display: block;
+    margin-top: 10px;
+}
+.inicio-sesion form input{
+    border-radius: 5px;
+    border: #AD8B73 1px solid;
+    width: 400px;
+    height: 20px;
+}
+
+/* TODAS LAS PAGS */
+footer{
+    background-color: #AD8B73;
+    width: 100%;
+}
+.footerAbajo{
+    position: fixed;
+    bottom: 0;
+}
+
+footer ul li{
+    list-style-type: none;
+    margin: 3px;
+}
+
+footer ul li a{
+    text-decoration: none;
+    color: #E3CAA5;
+    font-size: 18px;
+}
+.sinMargenAbajo{
+    margin-bottom: 0;
+}
