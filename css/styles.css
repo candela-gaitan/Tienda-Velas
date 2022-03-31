@@ -1,15 +1,25 @@
 *{
-    margin: 0;
+    margin: auto;
     padding: 0;
 }
 
 
 /* TODAS LAS PAGS */ 
+.barraBusqueda input {
+    width: 500px;
+    height: 40px;
+    border-radius: 5px;
+    border: #AD8B73 solid 2px;
+  }
 
 body {
     font-family: 'Varela Round', sans-serif;
     font-weight: 400;
     background-color: #E3CAA5;
+    grid-template-rows: repeat(1fr 1fr 2fr 1fr);    
+
+    max-width: 1000px;
+    margin: auto;
 }
 
 header,
@@ -17,10 +27,21 @@ nav{
     background-color: #AD8B73;
 }
 header {
-    display: flex;
-    flex-flow: row wrap;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr 1fr;
+    align-items: center;
+    padding-top: 5px;
 }
-
+header div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
 nav ul li a{
     text-decoration: none;
     color: #E3CAA5;
@@ -31,6 +52,9 @@ nav ul li{
     list-style-type: none;
     display: inline-block;
     margin: 10px;
+}
+.menu{
+    display: none;
 }
 .submenuProductos{
     display: none;
@@ -48,20 +72,38 @@ nav ul li{
     display: block;
 }
 /* INDEX */
+.slide{
+align-items: center;
+}
+.ultimos-productos{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
 .card{
     border: 1px #ad8b73e8 solid;
     border-radius: 5px;
     height: 270px;
     width: 250px;
     padding: 20px;
-    margin: 40px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
 }
 
 .containerImage{
-    height: 210px;
-    width: 230px;
-
+    height: 184px;
+    width: 184px;
+    overflow:hidden
 }
+	
+.containerImage:hover img {
+    transition:all .4s ease-in-out;
+    -webkit-transform:scale(1.3);
+    transform:scale(1.3);
+    cursor: pointer;
+}
+
 .containerImage img{
     max-width: 100%;
     max-height: 100%;
@@ -69,6 +111,11 @@ nav ul li{
 /* NOSOTROS */
 .mainNosotros{
     margin: 10px 0px 10px 10px;
+    display: grid;
+    grid-template-areas: "texto img"
+                         "texto img";
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 }
 .nosotrosP,
 .nosotrosImage{
@@ -76,9 +123,13 @@ nav ul li{
 }
 .nosotrosImage{
     max-width: 400px;
+    grid-area: img;
+    margin: auto;
 }
 .containerNosotrosP{
     width: 400px;
+    grid-area: texto;
+    margin: auto;
 }
 /* CONTACTO */
 .contacto{
@@ -146,6 +197,13 @@ nav ul li{
 footer{
     background-color: #AD8B73;
     width: 100%;
+    margin: auto;
+    bottom: 0;
+}
+.containerFooter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 .footerAbajo{
     position: fixed;
@@ -165,3 +223,131 @@ footer ul li a{
 .sinMargenAbajo{
     margin-bottom: 0;
 }
+
+.logo-rotacion:hover{
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    transition:all .6s linear;
+} 
+
+
+@media (max-width: 500px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: auto;
+    }
+    .menu{
+        display: flex;
+    }
+    .barraBusqueda,
+    .login,
+    .carrito  {
+        display: none;
+      }
+    header,
+    nav{
+        background-color: #AD8B73;
+        width: 100%;
+    }
+    header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        padding-bottom: 5px;
+    }
+    header div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    nav{
+        display: none;
+    }
+
+    /* INDEX */
+    .ultimos-productos{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 5px;
+    }
+    .card{
+        border: 1px #ad8b73e8 solid;
+        border-radius: 5px;
+        height: 270px;
+        width: 250px;
+        padding: 20px;
+        margin: 40px;
+    }
+    
+    .containerImage{
+        height: 210px;
+        width: 230px;
+    }
+    .containerImage img{
+        max-width: 100%;
+        max-height: 100%;
+    }
+    /* NOSOTROS */
+    .mainNosotros{
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    main img{
+        width: 80%;
+        margin: auto;
+    }
+    .nosotrosP,
+    .nosotrosImage{
+        padding: 10px;
+    }
+    .nosotrosImage{
+        max-width: 300px;
+        margin: auto;
+    }
+    .containerNosotrosP{
+        width: 300px;
+        margin-top: 5px;
+    }
+    
+    /* TODAS LAS PAGS */
+    footer{
+        background-color: #AD8B73;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding-bottom: 20px;
+    }
+    .containerFooter{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    footer img{
+        margin: auto;
+    }
+    footer ul{
+        margin: auto;
+    }
+    .footerAbajo{
+        position: absolute;
+        bottom: 0;
+    }
+    
+    footer ul li{
+        list-style-type: none;
+        margin: 3px;
+    }
+    
+    footer ul li a{
+        text-decoration: none;
+        color: #E3CAA5;
+        font-size: 18px;
+    }
+    .sinMargenAbajo{
+        margin-bottom: 0;
+    }
+    }
