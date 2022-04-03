@@ -17,7 +17,6 @@ body {
     font-weight: 400;
     background-color: #E3CAA5;
     grid-template-rows: repeat(1fr 1fr 2fr 1fr);    
-
     max-width: 1000px;
     margin: auto;
 }
@@ -46,6 +45,7 @@ nav ul li a{
     text-decoration: none;
     color: #E3CAA5;
     font-size: 18px;
+    text-transform: uppercase;
 }
 
 nav ul li{
@@ -72,8 +72,84 @@ nav ul li{
     display: block;
 }
 /* INDEX */
-.slide{
-align-items: center;
+
+/*                  SLIDER                  */
+.container{
+    margin: auto;
+    padding: 0;
+    max-width: 1000px;
+    margin-top: 1rem;
+  }
+  
+  .container ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+  }
+  .container li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+  
+  ul.slider{
+    position: relative;
+    width: 1000px;
+    height: 300px;
+  }
+  
+  ul.slider li {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      opacity: 0;
+      width: inherit;
+      height: inherit;
+      transition: opacity .5s;
+      background:#fff;
+  }
+  
+  .slider img{
+    max-width: 1000px;
+    height: 300px;
+    object-fit: cover;
+  }
+  
+  ul.slider li:first-child {
+      opacity: 1; /*Mostramos el primer <li>*/
+  }
+  
+  ul.slider li:target {
+      opacity: 1; /*Mostramos el <li> del enlace que pulsemos*/
+  }
+  
+  .menu-slider{
+    text-align: center;
+    margin: 20px;
+    max-width: 1000px;
+  }
+  
+  .menu-slider li{
+    display: inline-block;
+    text-align: center;
+    margin: 0.5rem 0;
+  }
+  
+  .menu-slider li a{
+    display: inline-block;
+    text-decoration: none;
+    background-color: #AD8B73;
+    padding: 10px;
+    width: 3px;
+    height: 3px;
+    border-radius: 100%;
+  }
+.sub-productos{
+    text-align: center;
+    color: #E3CAA5;
+    background: rgb(227,202,165);
+    background: linear-gradient(90deg, rgba(227,202,165,0.87) 0%, rgba(173,139,115,1) 50%, rgba(227,202,165,0.865983893557423) 100%);
+    margin-bottom: 1rem;
 }
 .ultimos-productos{
     display: flex;
@@ -81,19 +157,30 @@ align-items: center;
     margin-bottom: 20px;
 }
 .card{
-    border: 1px #ad8b73e8 solid;
+    border: 3px #ad8b73e8 solid;
     border-radius: 5px;
-    height: 270px;
+    height: 330px;
     width: 250px;
     padding: 20px;
     margin: auto;
     justify-content: center;
     align-items: center;
 }
+.cardTitle{
+    text-align: center;
+}
+.cardPrice{
+    margin-top: 5px;
+    text-align: center;
+    color: #E3CAA5;
+    background: rgb(227,202,165);
+    background: linear-gradient(90deg, rgba(227,202,165,0.87) 0%, rgba(173,139,115,1) 50%, rgba(227,202,165,0.865983893557423) 100%);
+    font-size: 1.3rem;
+}
 
 .containerImage{
-    height: 184px;
-    width: 184px;
+    height: 230px;
+    width: 200px;
     overflow:hidden
 }
 	
@@ -105,8 +192,8 @@ align-items: center;
 }
 
 .containerImage img{
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 100%;
 }
 /* NOSOTROS */
 .mainNosotros{
@@ -193,23 +280,34 @@ align-items: center;
     height: 20px;
 }
 
+/*PRODUCTOS*/
+.div-productos{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.margen-p{
+    margin: 0.5rem 0;
+}
+
 /* TODAS LAS PAGS */
 footer{
     background-color: #AD8B73;
     width: 100%;
     margin: auto;
     bottom: 0;
+    text-transform: uppercase;
 }
 .containerFooter{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
+/*
 .footerAbajo{
     position: fixed;
     bottom: 0;
 }
-
+*/
 footer ul li{
     list-style-type: none;
     margin: 3px;
@@ -220,14 +318,24 @@ footer ul li a{
     color: #E3CAA5;
     font-size: 18px;
 }
+.footer-redes{
+    display: flex;
+    flex-direction: row;
+}
+.redes img:hover {
+    transform: rotate(360deg);
+}
+.redes img {
+    transition: all 1s ease-in-out;
+}
 .sinMargenAbajo{
     margin-bottom: 0;
 }
 
 .logo-rotacion:hover{
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-    transition:all .6s linear;
+    transform: scale(1.1);
+    transition: all 1s ease-in-out;
+    cursor: pointer;
 } 
 
 
@@ -273,7 +381,7 @@ footer ul li a{
         margin-bottom: 5px;
     }
     .card{
-        border: 1px #ad8b73e8 solid;
+        border: 3px #ad8b73e8 solid;
         border-radius: 5px;
         height: 270px;
         width: 250px;
