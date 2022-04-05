@@ -198,9 +198,7 @@ nav ul li{
 /* NOSOTROS */
 .mainNosotros{
     margin: 10px 0px 10px 10px;
-    display: grid;
-    grid-template-areas: "texto img"
-                         "texto img";
+
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
 }
@@ -375,6 +373,18 @@ footer ul li a{
     }
 
     /* INDEX */
+    ul.slider{
+        margin: auto;
+        width: 350px;
+    }
+    .slider img{
+        margin: auto;
+        max-width: 350px;
+    }
+    .menu-slider ul {
+        margin: auto;
+        max-width: 350px;
+    }
     .ultimos-productos{
         display: flex;
         flex-direction: column;
