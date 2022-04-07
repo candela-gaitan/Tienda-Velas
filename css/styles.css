@@ -24,6 +24,7 @@ body {
 header,
 nav{
     background-color: #AD8B73;
+    padding: 0;
 }
 header {
     display: grid;
@@ -47,7 +48,9 @@ nav ul li a{
     font-size: 18px;
     text-transform: uppercase;
 }
-
+nav ul li a:hover{
+    color: #f1d9b5;
+}
 nav ul li{
     list-style-type: none;
     display: inline-block;
@@ -159,8 +162,8 @@ nav ul li{
 .card{
     border: 3px #ad8b73e8 solid;
     border-radius: 5px;
-    height: 330px;
-    width: 250px;
+    height: 410px;
+    width: 270px;
     padding: 20px;
     margin: auto;
     justify-content: center;
@@ -177,7 +180,9 @@ nav ul li{
     background: linear-gradient(90deg, rgba(227,202,165,0.87) 0%, rgba(173,139,115,1) 50%, rgba(227,202,165,0.865983893557423) 100%);
     font-size: 1.3rem;
 }
-
+p.cardPrice {
+    margin-bottom: 0;
+}
 .containerImage{
     height: 230px;
     width: 200px;
@@ -192,8 +197,8 @@ nav ul li{
 }
 
 .containerImage img{
-    width: 100%;
-    height: 100%;
+    height: 230px;
+    width: 200px;
 }
 /* NOSOTROS */
 .mainNosotros{
@@ -306,6 +311,10 @@ footer{
     bottom: 0;
 }
 */
+footer ul{
+    margin: 0 auto;
+    padding: 0;
+}
 footer ul li{
     list-style-type: none;
     margin: 3px;
@@ -316,9 +325,13 @@ footer ul li a{
     color: #E3CAA5;
     font-size: 18px;
 }
+footer ul li a:hover{
+    color: #f1d9b5;
+}
 .footer-redes{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    margin: auto;
 }
 .redes img:hover {
     transform: rotate(360deg);
@@ -335,7 +348,9 @@ footer ul li a{
     transition: all 1s ease-in-out;
     cursor: pointer;
 } 
-
+*{
+    box-sizing: content-box;
+}
 
 @media (max-width: 500px) {
     body {
@@ -346,6 +361,11 @@ footer ul li a{
     }
     .menu{
         display: flex;
+    }
+    .menu .btn{
+        color: #AD8B73;
+        background: #AD8B73;
+        border: none;
     }
     .barraBusqueda,
     .login,
@@ -398,7 +418,9 @@ footer ul li a{
         padding: 20px;
         margin: 40px;
     }
-    
+    article.card {
+        box-sizing: content-box;
+    }
     .containerImage{
         height: 210px;
         width: 230px;
@@ -406,6 +428,21 @@ footer ul li a{
     .containerImage img{
         max-width: 100%;
         max-height: 100%;
+    }
+    /* PRODUCTOS */
+    .div-productos{
+        display: grid;
+        grid-template-columns: 1fr;
+        margin: auto;
+    }
+    .margen-p{
+        margin: 0.5rem 0;
+    }
+    .descripcion{
+        display: none;
+    }
+    article.card.margen-p {
+        box-sizing: content-box;
     }
     /* NOSOTROS */
     .mainNosotros{
@@ -437,12 +474,15 @@ footer ul li a{
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        padding-bottom: 20px;
+        margin-top: 0.5rem;
+        padding-bottom: 0.5rem;
     }
     .containerFooter{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    footer .logo-rotacion{
+        display: none;
     }
     footer img{
         margin: auto;
@@ -454,12 +494,16 @@ footer ul li a{
         position: absolute;
         bottom: 0;
     }
-    
+    .footer-redes{
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+        padding: 0;
+    }
     footer ul li{
         list-style-type: none;
         margin: 3px;
     }
-    
     footer ul li a{
         text-decoration: none;
         color: #E3CAA5;
@@ -467,5 +511,8 @@ footer ul li a{
     }
     .sinMargenAbajo{
         margin-bottom: 0;
+    }
+    *{
+        box-sizing: border-box;
     }
     }
